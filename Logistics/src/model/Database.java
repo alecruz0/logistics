@@ -259,7 +259,15 @@ public class Database implements Runnable
 			System.err.println("Failure to Load Users");
 			System.exit(-1);
 		}
+		
 		this.users = users;
+		
+		if (this.users.isEmpty())
+		{
+			User defaultUser = new User("Administrator", "Administrator", new Date(), 
+					0x3000000, true, "administrator", "administrator");
+			this.users.add(defaultUser);
+		}
 	}
 	
 	/**
