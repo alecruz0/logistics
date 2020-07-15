@@ -707,7 +707,7 @@ public class Logistics implements Runnable, WindowListener
 	public static Logistics getInstance()
 	{
 		if (instance == null)
-			instance = new Logistics(900, 600);
+			instance = new Logistics(950, 600);
 		return instance;
 	}
 

@@ -11,6 +11,7 @@ import model.Company;
 import model.Product;
 import model.User;
 import model.Warehouse;
+import utilities.Utilities;
 
 /**
  * Controls output of data for storage.
@@ -26,6 +27,13 @@ class Output
 	public Output()
 	{
 		super();
+		String dataDirectory = "../data";
+		File directory = new File(dataDirectory);
+		if (!directory.exists())
+		{
+			if (!directory.mkdir())
+				Utilities.getInstance().error("Output() - Could not make directory of data");
+		}
 	}
 	
 	/**
